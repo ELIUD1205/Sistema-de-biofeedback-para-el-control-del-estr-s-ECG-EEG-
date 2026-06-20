@@ -13,5 +13,5 @@ Para registrar de la actividad eléctrica cerebral cortical orientada al Biofeed
 * **Configuración Bimodal (Canal 1):** Se utilizo la derivación interhemisférica  **Cz (C3 - C4)** referenciadas al pomul derecho como tierra física.
 * **Fisiología del Ritmo Alfa:** Esta ubicación sobre la corteza sensitivo-motora y frontal es idónea para medir la sincronización neuronal. Al cerrar los ojos, el cerebro entra en un estado de reposo metabólico, reflejado en un aumento drástico de la amplitud del **Ritmo Alfa (8 - 13 Hz)**. Al abrir los ojos (estímulo visual), ocurre el fenómeno de desincronización o "Bloqueo Alfa", reduciendo la potencia espectral de inmediato.
 
-![Derivacion EEG(Derivaciones EEG.png)
+![Derivacion EEG(Derivaciones_EEG.png)
 
