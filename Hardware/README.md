@@ -8,6 +8,11 @@ El **BIOPAC MP36** es un sistema de adquisición de datos de grado médico y de 
 
 ![BIOPAC MP36](BIOPAC.jpeg)
 
+* **Canal EEG:** El canal EEG en el BIOPAC es configurado a .5 - 100 Hz.
+* **Canal ECG:** El canal ECG en el BIOPAC es configurado a .05 - 150 Hz.
+
+![Canales BIOPAC](CanalesBIOPAC.jpeg)
+
 ## 2. Derivación Interhemisférica del Electroencefalograma (EEG)
 Para registrar de la actividad eléctrica cerebral cortical orientada al Biofeedback, se empleó un montaje simplificado basado en el **Sistema Internacional 10-20**.
 * **Configuración Bimodal (Canal 1):** Se utilizo la derivación interhemisférica  **Cz (C3 - C4)** referenciadas al pomul derecho como tierra física.
