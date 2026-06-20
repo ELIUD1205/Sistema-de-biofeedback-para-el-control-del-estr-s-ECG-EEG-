@@ -4,30 +4,7 @@ Este documento detalla la arquitectura de software, los modelos matemáticos y e
 ## Arquitectura General del Flujo
 El programa opera bajo un modelo de **concurrencia basada en eventos** mediante el método `.after()` de Tkinter. Esto evita el congelamiento de la interfaz gráfica (GUI) al separar la actualización visual del procesamiento de señales pesadas.
 
-[Archivo .acq] ──> [bioread] ──> [Señal EEG / Señal ECG]
-│
-┌──────────────────────────┴──────────────────────────┐
-
-▼                                                     ▼
-
-[Ventana Deslizante 2s]                               [Ventana Deslizante 2s]
-│                                                     │
-[Filtro Paso Banda 8-13 Hz]                           [Filtro Paso Banda 5-15 Hz]
-│                                                     │
-[FFT / Espectro PSD]                                  [find_peaks (Picos R)]
-│                                                     │
-▼                                                     ▼
-
-(Potencia Banda Alfa)                                   (BPM, RMSSD, LF/HF)
-
-│                                                     │
-└──────────────────────────┬──────────────────────────┘
-▼
-[Lógica del Semáforo Bimodal]
-│
-┌────────────────┴────────────────┐
-▼                                 ▼
-🟢 RELAJACIÓN (CALMA)              🔴 ALERTA / ESTRÉS
+![Flujo del Código](Flujo del Código.png)
 
 ## 1. Procesamiento de la Señal EEG (Canal 1)
 
