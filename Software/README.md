@@ -4,7 +4,7 @@ Este documento detalla la arquitectura de software, los modelos matemáticos y e
 ## Arquitectura General del Flujo
 El programa opera bajo un modelo de **concurrencia basada en eventos** mediante el método `.after()` de Tkinter. Esto evita el congelamiento de la interfaz gráfica (GUI) al separar la actualización visual del procesamiento de señales pesadas.
 
-![Flujo del Código](Flujo del Código.png)
+![Flujo del Código](FC.png)
 
 ## 1. Procesamiento de la Señal EEG (Canal 1)
 
