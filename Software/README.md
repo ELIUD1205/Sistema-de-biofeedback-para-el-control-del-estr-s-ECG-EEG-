@@ -5,25 +5,25 @@ Este documento detalla la arquitectura de software, los modelos matemáticos y e
 El programa opera bajo un modelo de **concurrencia basada en eventos** mediante el método `.after()` de Tkinter. Esto evita el congelamiento de la interfaz gráfica (GUI) al separar la actualización visual del procesamiento de señales pesadas.
 
 [Archivo .acq] ──> [bioread] ──> [Señal EEG / Señal ECG]
-                                      │
-           ┌──────────────────────────┴──────────────────────────┐
-           ▼                                                     ▼
- [Ventana Deslizante 2s]                               [Ventana Deslizante 2s]
-           │                                                     │
- [Filtro Paso Banda 8-13 Hz]                           [Filtro Paso Banda 5-15 Hz]
-           │                                                     │
-   [FFT / Espectro PSD]                                  [find_peaks (Picos R)]
-           │                                                     │
-           ▼                                                     ▼
-  (Potencia Banda Alfa)                                   (BPM, RMSSD, LF/HF)
-           │                                                     │
-           └──────────────────────────┬──────────────────────────┘
-                                      ▼
-                        [Lógica del Semáforo Bimodal]
-                                      │
-                     ┌────────────────┴────────────────┐
-                     ▼                                 ▼
-           🟢 RELAJACIÓN (CALMA)              🔴 ALERTA / ESTRÉS
+│
+┌──────────────────────────┴──────────────────────────┐
+▼                                                     ▼
+[Ventana Deslizante 2s]                               [Ventana Deslizante 2s]
+│                                                     │
+[Filtro Paso Banda 8-13 Hz]                           [Filtro Paso Banda 5-15 Hz]
+│                                                     │
+[FFT / Espectro PSD]                                  [find_peaks (Picos R)]
+│                                                     │
+▼                                                     ▼
+(Potencia Banda Alfa)                                   (BPM, RMSSD, LF/HF)
+│                                                     │
+└──────────────────────────┬──────────────────────────┘
+▼
+[Lógica del Semáforo Bimodal]
+│
+┌────────────────┴────────────────┐
+▼                                 ▼
+🟢 RELAJACIÓN (CALMA)              🔴 ALERTA / ESTRÉS
 
 ## 1. Procesamiento de la Señal EEG (Canal 1)
 
@@ -38,8 +38,6 @@ Una vez limpia la señal, la función `calcular_potencia_alfa()` ejecuta:
 1. **`np.fft.rfft`:** Transformada Rápida de Fourier para señales reales, convirtiendo el bloque de 2 segundos del dominio del tiempo al de la frecuencia.
 2. **Cálculo de la PSD (Densidad Espectral de Potencia):** $$\text{PSD} = \frac{1}{N} \cdot |X(f)|^2$$
 3. **Integración:** Se suman los valores de la PSD correspondientes únicamente a los índices de frecuencia entre $8.0$ y $13.0\text{ Hz}$. Un valor alto representa un cerebro en calma y libre de carga cognitiva pesada.
-
----
 
 ## 2. Procesamiento de la Señal ECG y HRV (Canal 2)
 
@@ -56,15 +54,3 @@ A partir del vector de diferencias temporales entre picos sucesivos ($\text{Inte
 * **Frecuencia Cardíaca (BPM):** Media aritmética de los latidos extrapolada a un minuto.
 * **RMSSD (Dominio del Tiempo):** Raíz cuadrada de la media de las diferencias al cuadrado de intervalos R-R sucesivos. Mide directamente la actividad del nervio vago (sistema parasimpático).
 * **Relación LF/HF (Dominio de la Frecuencia/Estimación):** Relación de desviación estándar entre las diferencias de intervalos sucesivos y los intervalos directos. Se utiliza como indicador del **Balance Simpático-Vagal**.
-
----
-
-## 🚦 3. Algoritmo Basal y Lógica del Semáforo
-
-El biofeedback automatizado se adapta a la fisiología propia de cada usuario mediante una fase de calibración inicial.
-
-```python
-# Ventana temporal crítica de acondicionamiento
-if tiempo_actual <= 10.0:
-    self.alfa_basal.append(potencia_alfa)
-    self.lfhf_basal.append(lf_hf)
