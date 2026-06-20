@@ -5,3 +5,5 @@ El **BIOPAC MP36** es un sistema de adquisición de datos de grado médico y de 
 * **Características técnicas:** Cuenta con un convertidor analógico-digital (ADC) de 24 bits, amplificadores de alta ganancia controlados por software y filtros analógicos integrados.
 * **Frecuencia de Muestreo ($f_s$):** Configurado a **2000 Hz** (2000 muestras por segundo), garantizando una resolución temporal óptima para evitar el solapamiento de frecuencias (aliasing) en señales de ECG y EEG de acuerdo con el teorema de Nyquist.
 * **Conexión:** Los módulos de aislamiento derivan la señal bioeléctrica procesada directamente a la computadora a través de un puerto USB seguro.
+
+![BIOPAC MP36](BIOPAC.jpeg)
