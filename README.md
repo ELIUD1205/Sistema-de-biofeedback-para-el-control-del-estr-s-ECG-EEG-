@@ -14,7 +14,7 @@ Para ejecutar el programa correctamente, es necesario contar con un entorno de *
 ### 1. Librerías Principales
 Instala las librerías necesarias ejecutando el siguiente comando en tu terminal:
 ```bash
-pip install numpy scipy matplotlib bioread
+pip install numpy scipy matplotlib bioread tkinter
 ```
 
 ### 2. Detalles de las Librerías Utilizadas 
