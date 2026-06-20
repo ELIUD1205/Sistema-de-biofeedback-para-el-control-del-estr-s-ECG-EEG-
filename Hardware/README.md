@@ -8,10 +8,19 @@ El **BIOPAC MP36** es un sistema de adquisición de datos de grado médico y de 
 
 ![BIOPAC MP36](BIOPAC.jpeg)
 
-## 2. Derivaciones Electroencefalograma (EEG)
+## 2. Derivación Interhemisférica del Electroencefalograma (EEG)
 Para registrar de la actividad eléctrica cerebral cortical orientada al Biofeedback, se empleó un montaje simplificado basado en el **Sistema Internacional 10-20**.
 * **Configuración Bimodal (Canal 1):** Se utilizo la derivación interhemisférica  **Cz (C3 - C4)** referenciadas al pomul derecho como tierra física.
 * **Fisiología del Ritmo Alfa:** Esta ubicación sobre la corteza sensitivo-motora y frontal es idónea para medir la sincronización neuronal. Al cerrar los ojos, el cerebro entra en un estado de reposo metabólico, reflejado en un aumento drástico de la amplitud del **Ritmo Alfa (8 - 13 Hz)**. Al abrir los ojos (estímulo visual), ocurre el fenómeno de desincronización o "Bloqueo Alfa", reduciendo la potencia espectral de inmediato.
 
-![Derivacion EEG](Derivaciones_EEG.png).
+![Derivación Interhemisférica EEG](Derivaciones_EEG.png).
 
+## 3. Derivación II del Electrocardiograma (ECG)
+La actividad bioeléctrica cardíaca se registró en el **Canal 2** utilizando la **Derivación II de Einthoven** (derivación bipolar de los miembros).
+* **Ubicación de los Electrodos:**
+  * **Electrodo Negativo (-):** Brazo derecho (RA - Right Arm), cerca de la muñeca o la fosa antecubital.
+  * **Electrodo Positivo (+):** Pierna izquierda (LL - Left Leg), colocado en el tercio inferior del abdomen.
+  * **Electrodo de Tierra (GND / REF):** Pierna derecha (RL - Right Leg), actúa como la referencia común del amplificador de instrumentación para suprimir el ruido de modo común.
+* **Justificación Biomédica:** La Derivación II sigue el eje eléctrico principal de despolarización del corazón (desde el nodo SA hacia el ápice ventricular, aproximadamente a 60°). Esto produce una **onda R con la mayor amplitud y nitidez posible**, lo cual es un requisito indispensable para que nuestro algoritmo de Pan-Tompkins calcule los intervalos R-R y la Variabilidad de la Frecuencia Cardíaca (HRV) sin errores por falsos positivos.
+
+![Derivación II de ECG](Derivacion_II_ECG.png)
