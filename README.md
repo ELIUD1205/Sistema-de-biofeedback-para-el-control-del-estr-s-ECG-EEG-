@@ -15,3 +15,11 @@ Para ejecutar el programa correctamente, es necesario contar con un entorno de *
 Instala las librerías necesarias ejecutando el siguiente comando en tu terminal:
 ```bash
 pip install numpy scipy matplotlib bioread
+```
+
+### 2. Detalles de las Librerías Utilizadas 
+* **bioread: Librería para deserializar y mapear las estructuras de datos binarias nativas de BIOPAC (.acq).
+* **numpy: Librería fundamental en Python para cálculo científico y análisis de datos.
+* **scipy.signal: Implementación de filtros Butterworth digitales de fase cero (filtfilt) y algoritmos adaptativos para localización de máximos locales (find_peaks).
+* **matplotlib: bibliotecas de visualización de datos más utilizadas en el ecosistema de Python. Usada para crear figuras dinámicas multipanel dentro del bucle de la aplicación.
+* **tkinter: Biblioteca estándar de Python encargada del despliegue del GUI y el procesamiento multitarea basado en eventos (.after).
