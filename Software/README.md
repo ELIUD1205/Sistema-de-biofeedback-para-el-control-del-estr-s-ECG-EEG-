@@ -21,7 +21,6 @@ Una vez limpia la señal, la función `calcular_potencia_alfa()` ejecuta:
 3. **Integración:** Se suman los valores de la PSD correspondientes únicamente a los índices de frecuencia entre $8.0$ y $13.0\text{ Hz}$. Un valor alto representa un cerebro en calma y libre de carga cognitiva pesada.
 
 ## 2. Procesamiento de la Señal ECG y HRV (Canal 2)
-
 El análisis cardíaco se centra en la extracción del complejo QRS y el estudio micro-estructural de la Variabilidad de la Frecuencia Cardíaca (HRV).
 
 ### A. Detección de Picos R
@@ -35,3 +34,8 @@ A partir del vector de diferencias temporales entre picos sucesivos ($\text{Inte
 * **Frecuencia Cardíaca (BPM):** Media aritmética de los latidos extrapolada a un minuto.
 * **RMSSD (Dominio del Tiempo):** Raíz cuadrada de la media de las diferencias al cuadrado de intervalos R-R sucesivos. Mide directamente la actividad del nervio vago (sistema parasimpático).
 * **Relación LF/HF (Dominio de la Frecuencia/Estimación):** Relación de desviación estándar entre las diferencias de intervalos sucesivos y los intervalos directos. Se utiliza como indicador del **Balance Simpático-Vagal**.
+
+## 3. GUI funcional
+![GUI Calibración de parametros](Calibracion.jpeg)
+![GUI estado de reposo](Reposo.jpeg)
+![GUI estado de estrés](Estres.jpeg)
