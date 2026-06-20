@@ -7,7 +7,9 @@ El programa opera bajo un modelo de **concurrencia basada en eventos** mediante 
 [Archivo .acq] ──> [bioread] ──> [Señal EEG / Señal ECG]
 │
 ┌──────────────────────────┴──────────────────────────┐
+
 ▼                                                     ▼
+
 [Ventana Deslizante 2s]                               [Ventana Deslizante 2s]
 │                                                     │
 [Filtro Paso Banda 8-13 Hz]                           [Filtro Paso Banda 5-15 Hz]
@@ -15,7 +17,9 @@ El programa opera bajo un modelo de **concurrencia basada en eventos** mediante 
 [FFT / Espectro PSD]                                  [find_peaks (Picos R)]
 │                                                     │
 ▼                                                     ▼
+
 (Potencia Banda Alfa)                                   (BPM, RMSSD, LF/HF)
+
 │                                                     │
 └──────────────────────────┬──────────────────────────┘
 ▼
